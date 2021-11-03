@@ -21,11 +21,11 @@
   $(document).ready(function () {
     var accessToken = Cookies.get("accessToken");
     var hasAuth = accessToken && accessToken.length > 0;
-    updateUIWithAuthState(hasAuth);
+    // updateUIWithAuthState(hasAuth);
 
-    $("#connectbutton").click(function () {
-      doAuthRedirect();
-    });
+    // $("#connectbutton").click(function () {
+    //   doAuthRedirect();
+    // });
 
     $("#getvenuesbutton").click(function () {
       tableau.connectionName = "Foursquare Venues Data";
@@ -88,9 +88,9 @@
     tableau.authType = tableau.authTypeEnum.custom;
 
     // If we are in the auth phase we only want to show the UI needed for auth
-    if (tableau.phase == tableau.phaseEnum.authPhase) {
-      $("#getvenuesbutton").css("display", "none");
-    }
+    // if (tableau.phase == tableau.phaseEnum.authPhase) {
+    //   $("#getvenuesbutton").css("display", "none");
+    // }
 
     if (tableau.phase == tableau.phaseEnum.gatherDataPhase) {
       // If the API that WDC is using has an endpoint that checks
